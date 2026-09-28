@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración · Clevmarket</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="styles.css"></head>
+<body class="admin">
+<main id="login" class="login"><form id="form-login" class="login__box"><h1>Administración</h1>
+<label class="field">Contraseña<input type="password" id="pass" required autocomplete="current-password"></label>
+<button class="btn" type="submit">Entrar</button></form></main>
+<div id="panel" hidden>
+<header class="nav"><div class="container nav__in"><span class="nav__logo">Clevmarket · Admin</span><button class="btn btn--ghost btn--sm" id="btn-logout" type="button">Cerrar sesión</button></div></header>
+<main class="container section">
+<div class="kpis"><div class="kpi"><span>Productos</span><strong id="kpi-total">0</strong></div><div class="kpi"><span>Clics históricos</span><strong id="kpi-clicks">0</strong></div><div class="kpi"><span>Producto estrella</span><strong id="kpi-star">—</strong></div></div>
+<section class="panel"><h2 id="form-title">Nuevo producto</h2>
+<form id="form-prod" class="form form--grid" novalidate><input type="hidden" id="prod-id">
+<label class="field">Título *<input id="titulo"></label>
+<label class="field">Categoría *<input id="categoria"></label>
+<label class="field">Precio de oferta (USD)<input id="precio_oferta" type="number" min="0" step="0.01"></label>
+<label class="field">URL de imagen *<input id="url_imagen" type="url" placeholder="https://images.unsplash.com/..."></label>
+<label class="field">URL de afiliado *<input id="url_afiliado" type="url" placeholder="https://..."></label>
+<label class="field field--full">Descripción corta *<input id="descripcion_corta"></label>
+<label class="field field--full">Descripción detallada *<textarea id="descripcion_detallada" rows="4"></textarea></label>
+<div class="switches field--full">
+<label class="switch"><input type="checkbox" id="esPatrocinado"><span>Patrocinado</span></label>
+<label class="switch"><input type="checkbox" id="esTendencia"><span>Tendencia</span></label>
+<label class="switch"><input type="checkbox" id="esNovedad"><span>Novedad</span></label></div>
+<div class="field--full"><button class="btn" type="submit">Guardar producto</button> <button class="btn btn--ghost" type="button" id="btn-cancel">Cancelar edición</button></div></form></section>
+<section class="panel"><div class="panel__head"><h2>Inventario</h2><div><button class="btn btn--ghost btn--sm" id="btn-export" type="button">Exportar JSON</button> <label class="btn btn--ghost btn--sm">Importar JSON<input type="file" id="file-import" accept=".json,application/json" hidden></label></div></div>
+<div class="table-wrap"><table><thead><tr><th>Título</th><th>Categoría</th><th>Precio</th><th>Etiquetas</th><th>Clics</th><th>Acciones</th></tr></thead><tbody id="tbody"></tbody></table></div></section>
+</main></div>
+<script src="main.js"></script><script src="admin.js"></script>
+</body></html>
